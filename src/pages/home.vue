@@ -46,6 +46,12 @@
           <template v-else>
             <el-form-item label="API Key">
               <el-input v-model="form.accessKeyId" clearable></el-input>
+              <el-link
+                href="https://dashboard.4everland.org/#/settings?tab=auth_tokens&sub=bucket_auth_tokens"
+                type="primary"
+                target="_blank"
+                >如何获取？</el-link
+              >
             </el-form-item>
             <el-form-item label="API Secrect">
               <el-input v-model="form.secretAccessKey" clearable></el-input>
@@ -125,7 +131,7 @@
                 @click.stop="openLink(scope.row.stsApi)"
                 size="mini"
                 >{{
-                  scope.row.stsApi.replace("https://", "").cutStr(20, 10)
+                  scope.row.stsApi.replace("https://", "").cutStr(10, 10)
                 }}</el-button
               >
               <span v-else>
